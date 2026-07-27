@@ -104,72 +104,78 @@
                                     </h6>
                                 </div>
                                 <div class="card-body">
-                                    <?php if ($sudah_absen): ?>
-                                        <div class="alert alert-success border-0">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <i class="bi bi-check-circle me-2"></i>
-                                                <strong>Sudah Absen</strong>
-                                            </div>
-                                            <small>
-                                                Status: <span class="badge bg-success"><?= $status_absen ?></span><br>
-                                                Waktu: <?= $waktu_absen ?>
-                                            </small>
-                                        </div>
-                                    <?php elseif ($sudah_daftar): ?>
-                                        <?php if ($bisa_absen): ?>
-                                            <div class="alert alert-info border-0">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="bi bi-info-circle me-2"></i>
-                                                    <span>Anda sudah terdaftar. Silakan lakukan absensi.</span>
-                                                </div>
-                                            </div>
-                                            <div class="d-grid">
-                                                <a href="<?= site_url('absensi/hadir/' . $agenda['id']) ?>"
-                                                   class="btn btn-success">
-                                                    <i class="bi bi-geo-alt me-1"></i>
-                                                    Absensi GPS
-                                                </a>
-                                            </div>
-                                        <?php else: ?>
-                                            <div class="alert alert-warning border-0">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="bi bi-clock me-2"></i>
-                                                    <span>Anda sudah terdaftar</span>
-                                                </div>
-                                            </div>
-                                            <?php if (!empty($pesan_waktu)): ?>
-                                                <div class="alert alert-info border-0">
-                                                    <small><i class="bi bi-info-circle me-1"></i><?= $pesan_waktu ?></small>
-                                                </div>
-                                            <?php endif; ?>
-                                            <div class="d-grid gap-2">
-                                                <form method="post" action="<?= site_url('absensi/batal/' . $agenda['id']) ?>">
-                                                    <?= csrf_field() ?>
-                                                    <button type="submit" class="btn btn-outline-danger w-100"
-                                                            onclick="return confirm('Yakin ingin membatalkan pendaftaran?')">
-                                                        <i class="bi bi-x-circle me-1"></i>
-                                                        Batalkan Pendaftaran
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        <?php endif; ?>
-                                    <?php else: ?>
-                                        <div class="alert alert-warning border-0">
-                                            <div class="d-flex align-items-center">
-                                                <i class="bi bi-exclamation-triangle me-2"></i>
-                                                <span>Anda belum terdaftar di agenda ini</span>
-                                            </div>
-                                        </div>
-                                        <div class="d-grid">
-                                            <form method="post" action="<?= site_url('absensi/daftar/' . $agenda['id']) ?>">
-                                                <?= csrf_field() ?>
-                                                <button type="submit" class="btn btn-primary w-100">
-                                                    <i class="bi bi-person-plus me-1"></i>
-                                                    Daftar Kegiatan
-                                                </button>
-                                            </form>
-                                        </div>
-                                    <?php endif; ?>
+                                     <?php if ($sudah_absen): ?>
+                                         <div class="alert alert-success border-0">
+                                             <div class="d-flex align-items-center mb-2">
+                                                 <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+                                                 <strong>Sudah Melakukan Absensi</strong>
+                                             </div>
+                                             <small class="d-block mt-1">
+                                                 Status: <span class="badge bg-success"><?= $status_absen ?></span><br>
+                                                 Waktu: <?= $waktu_absen ?>
+                                             </small>
+                                         </div>
+                                     <?php else: ?>
+                                         <?php if ($bisa_absen): ?>
+                                             <div class="alert alert-success border-0">
+                                                 <div class="d-flex align-items-center">
+                                                     <i class="bi bi-geo-alt-fill me-2 fs-5 text-success"></i>
+                                                     <span>Absensi GPS sedang dibuka. Silakan klik tombol di bawah untuk absen.</span>
+                                                 </div>
+                                             </div>
+                                             <div class="d-grid gap-2">
+                                                 <a href="<?= site_url('absensi/hadir/' . $agenda['id']) ?>"
+                                                    class="btn btn-success btn-lg fw-bold shadow-sm">
+                                                     <i class="bi bi-geo-alt-fill me-1"></i>
+                                                     Absensi GPS Sekarang
+                                                 </a>
+                                                 <?php if (!$sudah_daftar): ?>
+                                                     <form method="post" action="<?= site_url('absensi/daftar/' . $agenda['id']) ?>">
+                                                         <?= csrf_field() ?>
+                                                         <button type="submit" class="btn btn-outline-primary w-100 btn-sm">
+                                                             <i class="bi bi-person-plus me-1"></i>
+                                                             Daftar Sebagai Peserta
+                                                         </button>
+                                                     </form>
+                                                 <?php endif; ?>
+                                             </div>
+                                         <?php else: ?>
+                                             <div class="alert alert-warning border-0">
+                                                 <div class="d-flex align-items-center">
+                                                     <i class="bi bi-clock me-2"></i>
+                                                     <span>Absensi Belum / Tidak Tersedia</span>
+                                                 </div>
+                                             </div>
+                                             <?php if (!empty($pesan_waktu)): ?>
+                                                 <div class="alert alert-info border-0">
+                                                     <small><i class="bi bi-info-circle me-1"></i><?= $pesan_waktu ?></small>
+                                                 </div>
+                                             <?php endif; ?>
+                                             
+                                             <?php if (!$sudah_daftar): ?>
+                                                 <div class="d-grid">
+                                                     <form method="post" action="<?= site_url('absensi/daftar/' . $agenda['id']) ?>">
+                                                         <?= csrf_field() ?>
+                                                         <button type="submit" class="btn btn-primary w-100">
+                                                             <i class="bi bi-person-plus me-1"></i>
+                                                             Daftar Kegiatan
+                                                         </button>
+                                                     </form>
+                                                 </div>
+                                             <?php else: ?>
+                                                 <div class="d-grid">
+                                                     <form method="post" action="<?= site_url('absensi/batal/' . $agenda['id']) ?>">
+                                                         <?= csrf_field() ?>
+                                                         <button type="submit" class="btn btn-outline-danger w-100"
+                                                                 onclick="return confirm('Yakin ingin membatalkan pendaftaran?')">
+                                                             <i class="bi bi-x-circle me-1"></i>
+                                                             Batalkan Pendaftaran
+                                                         </button>
+                                                     </form>
+                                                 </div>
+                                             <?php endif; ?>
+                                         <?php endif; ?>
+                                     <?php endif; ?>
 
                                     <?php if ($sudah_daftar && !empty($peserta_list)): ?>
                                         <div class="mt-4">

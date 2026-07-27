@@ -92,21 +92,24 @@ class AbsensiController extends BaseController
             $bisaAbsen = false;
             $pesanWaktu = '';
             
-            if ($sudahDaftar && !$sudahAbsen) {
-                $now = new \DateTime('now', new \DateTimeZone('Asia/Jakarta'));
-                $tanggalMulai = new \DateTime($agenda['tanggal_mulai']);
-                $tanggalSelesai = !empty($agenda['tanggal_selesai']) ? new \DateTime($agenda['tanggal_selesai']) : clone $tanggalMulai;
-                // Set tanggal_selesai to end of day if same day or missing time
-                if (empty($agenda['tanggal_selesai'])) {
-                    $tanggalSelesai->setTime(23, 59, 59);
-                }
-                
-                if ($now < $tanggalMulai) {
-                    $pesanWaktu = 'Absensi akan dibuka pada waktu acara dimulai (' . $tanggalMulai->format('d/m/Y H:i') . ')';
-                } elseif ($now > $tanggalSelesai) {
-                    $pesanWaktu = 'Absensi sudah ditutup pada ' . $tanggalSelesai->format('d/m/Y H:i');
-                } else {
+            // Jika user belum terdaftar namun ingin absen/daftar langsung, atau Admin/Super Admin
+            $isAdmin = in_array(session()->get('id_role'), [1, 2]);
+            
+            $now = new \DateTime('now', new \DateTimeZone('Asia/Jakarta'));
+            $tanggalMulai = new \DateTime($agenda['tanggal_mulai']);
+            $tanggalSelesai = !empty($agenda['tanggal_selesai']) ? new \DateTime($agenda['tanggal_selesai']) : clone $tanggalMulai;
+            if (empty($agenda['tanggal_selesai'])) {
+                $tanggalSelesai->setTime(23, 59, 59);
+            }
+            
+            // Waktu absensi fleksibel: dibuka dari hari H atau untuk Admin
+            if (!$sudahAbsen) {
+                if ($isAdmin || ($now >= $tanggalMulai && $now <= $tanggalSelesai)) {
                     $bisaAbsen = true;
+                } elseif ($now < $tanggalMulai) {
+                    $pesanWaktu = 'Absensi dibuka saat acara dimulai (' . $tanggalMulai->format('d/m/Y H:i') . ')';
+                } else {
+                    $pesanWaktu = 'Absensi telah ditutup pada ' . $tanggalSelesai->format('d/m/Y H:i');
                 }
             }
             
