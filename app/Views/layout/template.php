@@ -266,24 +266,20 @@
         </div>
     </div>
     
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-white border-top shadow-sm">
-        <div class="container-fluid px-4">
-            <div class="row align-items-center gy-2">
-                <div class="col-md-6 col-12 text-center text-md-start">
-                    <div class="d-inline-flex align-items-center">
-                        <img src="<?= base_url('logo.png') ?>" alt="PDPM Logo" style="height: 28px; width: auto;" class="me-2">
-                        <span class="small text-secondary fw-medium">
-                            © <?= date('Y') ?> <strong class="text-dark">PDPM Karanganyar</strong>. Pemuda Muhammadiyah.
-                        </span>
-                    </div>
+    <!-- Minimalist Footer -->
+    <footer class="footer mt-auto py-3 bg-white border-top">
+        <div class="container-fluid px-3 px-md-4">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 text-center text-md-start">
+                <div class="d-flex align-items-center">
+                    <img src="<?= base_url('logo.png') ?>" alt="PDPM Logo" style="height: 24px; width: auto;" class="me-2">
+                    <span class="small text-muted">
+                        &copy; <?= date('Y') ?> <strong class="text-dark fw-semibold">PDPM Karanganyar</strong> &bull; Pemuda Muhammadiyah
+                    </span>
                 </div>
-                <div class="col-md-6 col-12 text-center text-md-end">
-                    <div class="footer-links small">
-                        <a href="<?= site_url('profil') ?>" class="text-secondary text-decoration-none me-3 hover-danger">Tentang</a>
-                        <a href="<?= site_url('kontak') ?>" class="text-secondary text-decoration-none me-3 hover-danger">Kontak</a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="text-secondary text-decoration-none hover-danger">Bantuan</a>
-                    </div>
+                <div class="footer-links small">
+                    <a href="<?= site_url('profil') ?>" class="text-secondary text-decoration-none me-3">Tentang</a>
+                    <a href="<?= site_url('kontak') ?>" class="text-secondary text-decoration-none me-3">Kontak</a>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="text-secondary text-decoration-none"><i class="bi bi-whatsapp text-success me-1"></i>Bantuan</a>
                 </div>
             </div>
         </div>
