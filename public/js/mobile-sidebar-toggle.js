@@ -1,3 +1,4 @@
+(function() {
 /**
  * Mobile Sidebar Toggle Handler
  * Manages sidebar visibility on mobile devices
@@ -188,8 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add CSS for smooth transitions
-const style = document.createElement('style');
-style.textContent = `
+const sidebarStyle = document.createElement('style');
+sidebarStyle.textContent = `
     .sidebar-minimalist {
         transition: left 0.3s ease !important;
     }
@@ -223,4 +224,5 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style);
+document.head.appendChild(sidebarStyle);
+})();
