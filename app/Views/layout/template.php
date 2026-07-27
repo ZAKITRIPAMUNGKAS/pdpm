@@ -251,7 +251,7 @@
             </nav>
 
             <!-- Main Content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content-minimalist">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content-minimalist d-flex flex-column">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2"><?= $page_title ?? 'Dashboard' ?></h1>
                 </div>
@@ -261,29 +261,32 @@
                 <?php if (session()->getFlashdata('error')): ?>
                     <div class="alert alert-danger" role="alert"><?= session()->getFlashdata('error') ?></div>
                 <?php endif; ?>
-                <?= $this->renderSection('content') ?>
+                
+                <div class="flex-grow-1">
+                    <?= $this->renderSection('content') ?>
+                </div>
+
+                <!-- Minimalist Dashboard Footer -->
+                <footer class="footer mt-5 py-3 px-3 bg-white border rounded-3 shadow-sm mb-3">
+                    <div class="container-fluid p-0">
+                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 text-center text-md-start">
+                            <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                                <img src="<?= base_url('logo.png') ?>" alt="PDPM Logo" style="height: 22px; width: auto;" class="me-2">
+                                <span class="small text-muted">
+                                    &copy; <?= date('Y') ?> <strong class="text-dark fw-semibold">PDPM Karanganyar</strong> &bull; Pemuda Muhammadiyah
+                                </span>
+                            </div>
+                            <div class="footer-links small">
+                                <a href="<?= site_url('profil') ?>" class="text-secondary text-decoration-none me-3 hover-danger">Tentang</a>
+                                <a href="<?= site_url('kontak') ?>" class="text-secondary text-decoration-none me-3 hover-danger">Kontak</a>
+                                <a href="https://wa.me/6281234567890" target="_blank" class="text-secondary text-decoration-none hover-success"><i class="bi bi-whatsapp text-success me-1"></i>Bantuan</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </main>
         </div>
     </div>
-    
-    <!-- Minimalist Footer -->
-    <footer class="footer mt-auto py-3 bg-white border-top">
-        <div class="container-fluid px-3 px-md-4">
-            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 text-center text-md-start">
-                <div class="d-flex align-items-center">
-                    <img src="<?= base_url('logo.png') ?>" alt="PDPM Logo" style="height: 24px; width: auto;" class="me-2">
-                    <span class="small text-muted">
-                        &copy; <?= date('Y') ?> <strong class="text-dark fw-semibold">PDPM Karanganyar</strong> &bull; Pemuda Muhammadiyah
-                    </span>
-                </div>
-                <div class="footer-links small">
-                    <a href="<?= site_url('profil') ?>" class="text-secondary text-decoration-none me-3">Tentang</a>
-                    <a href="<?= site_url('kontak') ?>" class="text-secondary text-decoration-none me-3">Kontak</a>
-                    <a href="https://wa.me/6281234567890" target="_blank" class="text-secondary text-decoration-none"><i class="bi bi-whatsapp text-success me-1"></i>Bantuan</a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Local Scripts -->
     <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
