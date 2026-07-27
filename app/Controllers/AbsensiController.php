@@ -95,7 +95,11 @@ class AbsensiController extends BaseController
             if ($sudahDaftar && !$sudahAbsen) {
                 $now = new \DateTime('now', new \DateTimeZone('Asia/Jakarta'));
                 $tanggalMulai = new \DateTime($agenda['tanggal_mulai']);
-                $tanggalSelesai = new \DateTime($agenda['tanggal_selesai']);
+                $tanggalSelesai = !empty($agenda['tanggal_selesai']) ? new \DateTime($agenda['tanggal_selesai']) : clone $tanggalMulai;
+                // Set tanggal_selesai to end of day if same day or missing time
+                if (empty($agenda['tanggal_selesai'])) {
+                    $tanggalSelesai->setTime(23, 59, 59);
+                }
                 
                 if ($now < $tanggalMulai) {
                     $pesanWaktu = 'Absensi akan dibuka pada waktu acara dimulai (' . $tanggalMulai->format('d/m/Y H:i') . ')';
