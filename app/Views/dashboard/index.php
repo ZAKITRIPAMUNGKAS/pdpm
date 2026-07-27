@@ -760,37 +760,44 @@
                         </div>
                     </div>
                     
-                    <!-- Recent News -->
+                    <!-- Recent News Card -->
                     <div class="modern-card">
-                        <div class="card-header">
-                            <h5><i class="bi bi-newspaper"></i>Berita Terbaru</h5>
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="m-0"><i class="bi bi-newspaper me-2 text-danger"></i>Berita Terbaru</h5>
                         </div>
                         <div class="card-body">
                             <?php if(!empty($recentBerita)): ?>
-                                <div class="news-list">
+                                <div class="news-list d-flex flex-column gap-2 mb-3">
                                     <?php foreach(array_slice($recentBerita, 0, 3) as $berita): ?>
-                                        <div class="news-item d-flex align-items-center mb-3">
-                                            <div class="activity-icon red me-3">
+                                        <?php 
+                                        $judulClean = strip_tags(word_limiter($berita['judul'] ?? 'Berita', 10, '...'));
+                                        $slug = !empty($berita['slug']) ? $berita['slug'] : $berita['id'];
+                                        ?>
+                                        <a href="<?= site_url('berita/' . $slug) ?>" class="news-item-row text-decoration-none d-flex align-items-center p-2 rounded border border-light-subtle shadow-sm hover-lift">
+                                            <div class="news-icon-circle me-3 flex-shrink-0">
                                                 <i class="bi bi-newspaper"></i>
                                             </div>
-                                            <div class="flex-grow-1">
-                                                <div class="news-title small fw-medium"><?= esc(word_limiter($berita['judul'] ?? 'Berita', 8)) ?></div>
-                                                <small class="text-muted"><?= date('d M Y', strtotime($berita['created_at'])) ?></small>
+                                            <div class="flex-grow-1 min-w-0 me-2 text-start">
+                                                <div class="news-title-text fw-semibold text-dark text-truncate mb-1"><?= esc($judulClean) ?></div>
+                                                <small class="text-muted d-flex align-items-center">
+                                                    <i class="bi bi-calendar3 me-1"></i>
+                                                    <?= date('d M Y', strtotime($berita['created_at'])) ?>
+                                                </small>
                                             </div>
-                                            <a href="/berita/<?= $berita['slug'] ?>" class="btn btn-sm btn-outline-primary">
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
+                                            <div class="news-arrow text-danger flex-shrink-0">
+                                                <i class="bi bi-chevron-right"></i>
+                                            </div>
+                                        </a>
                                     <?php endforeach; ?>
                                 </div>
-                                <a href="<?= site_url('berita') ?>" class="btn btn-outline-info btn-sm w-100">
+                                <a href="<?= site_url('berita') ?>" class="btn btn-outline-danger btn-sm w-100 fw-semibold">
                                     <i class="bi bi-newspaper me-1"></i>Lihat Semua Berita
                                 </a>
                             <?php else: ?>
-                                <div class="empty-state text-center">
-                                    <i class="bi bi-newspaper"></i>
-                                    <p class="mb-0">Tidak ada berita</p>
-                                    <small>Berita akan muncul di sini</small>
+                                <div class="empty-state text-center py-4">
+                                    <i class="bi bi-newspaper fs-1 text-muted"></i>
+                                    <p class="mb-0 text-secondary mt-2">Belum ada berita terbaru</p>
+                                    <small class="text-muted">Berita yang dipublikasikan akan muncul di sini</small>
                                 </div>
                             <?php endif; ?>
                         </div>
