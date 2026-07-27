@@ -119,6 +119,8 @@ class AbsensiController extends BaseController
                 }
             }
             
+            $absensiList = $this->absensiModel->getAbsensiByAgenda($id);
+
             $data = [
                 'title' => 'Detail Agenda - ' . $agenda['nama_kegiatan'],
                 'page_title' => 'Detail Agenda',
@@ -130,7 +132,9 @@ class AbsensiController extends BaseController
                 'status_absen' => $statusAbsen,
                 'waktu_absen' => $waktuAbsen,
                 'pesan_waktu' => $pesanWaktu,
-                'peserta_list' => $this->pesertaModel->getPesertaByAgenda($id)
+                'peserta_list' => $this->pesertaModel->getPesertaByAgenda($id),
+                'absensi_list' => $absensiList,
+                'jumlah_absen' => count($absensiList)
             ];
 
             return view('absensi/detail_agenda', $data);

@@ -199,6 +199,99 @@
                         </div>
                     </div>
                     
+                    <!-- Daftar Hadir / Absensi Section -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card border-0 bg-light">
+                                <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold mb-0">
+                                        <i class="bi bi-person-check-fill me-2"></i>
+                                        Daftar Hadir (Telah Absensi)
+                                    </h6>
+                                    <span class="badge bg-success rounded-pill px-3 py-2">
+                                        <?= $jumlah_absen ?? 0 ?> / <?= $jumlah_peserta ?? 0 ?> Peserta Hadir
+                                    </span>
+                                </div>
+                                <div class="card-body p-0">
+                                    <?php if (!empty($absensi_list)): ?>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover align-middle mb-0 bg-white">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th class="ps-3" style="width: 60px;">No</th>
+                                                        <th>Nama Peserta</th>
+                                                        <th>No. HP</th>
+                                                        <th>Waktu Absen</th>
+                                                        <th>Jarak GPS</th>
+                                                        <th class="text-center">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php $noAbs = 1; foreach ($absensi_list as $absen): ?>
+                                                        <tr>
+                                                            <td class="ps-3 fw-bold text-muted"><?= $noAbs++ ?></td>
+                                                            <td>
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="avatar-sm bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0">
+                                                                        <i class="bi bi-person-fill"></i>
+                                                                    </div>
+                                                                    <div>
+                                                                        <div class="fw-semibold text-dark"><?= esc($absen['nama_lengkap']) ?></div>
+                                                                        <small class="text-muted"><?= esc($absen['email'] ?? '-') ?></small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <?php if (!empty($absen['no_hp'])): ?>
+                                                                    <a href="https://wa.me/<?= preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $absen['no_hp'])) ?>" 
+                                                                       target="_blank" 
+                                                                       class="btn btn-sm btn-outline-success rounded-pill py-0 px-2">
+                                                                        <i class="bi bi-whatsapp me-1"></i><?= esc($absen['no_hp']) ?>
+                                                                    </a>
+                                                                <?php else: ?>
+                                                                    <span class="text-muted small">-</span>
+                                                                <?php endif; ?>
+                                                            </td>
+                                                            <td>
+                                                                <span class="small fw-medium">
+                                                                    <i class="bi bi-clock me-1 text-muted"></i>
+                                                                    <?= date('d M Y H:i', strtotime($absen['waktu_absen'])) ?> WIB
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge bg-light text-dark border">
+                                                                    <i class="bi bi-geo-alt text-danger me-1"></i>
+                                                                    <?= number_format($absen['jarak_meter'], 1) ?> m
+                                                                </span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <?php if (strtolower($absen['status_absen']) === 'hadir'): ?>
+                                                                    <span class="badge bg-success rounded-pill px-3 py-1">
+                                                                        <i class="bi bi-check-circle me-1"></i>Hadir
+                                                                    </span>
+                                                                <?php else: ?>
+                                                                    <span class="badge bg-warning text-dark rounded-pill px-3 py-1">
+                                                                        <i class="bi bi-clock-history me-1"></i><?= esc(ucfirst($absen['status_absen'])) ?>
+                                                                    </span>
+                                                                <?php endif; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="p-4 text-center text-muted">
+                                            <i class="bi bi-person-x display-6 d-block mb-2 text-secondary"></i>
+                                            <p class="mb-0 fw-medium">Belum ada peserta yang melakukan absensi pada agenda ini.</p>
+                                            <small>Peserta yang melakukan absensi GPS akan muncul di sini secara real-time.</small>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="mt-4">
                         <a href="<?= site_url('absensi/agenda') ?>" class="btn btn-outline-secondary">
                             <i class="bi bi-arrow-left me-1"></i>
