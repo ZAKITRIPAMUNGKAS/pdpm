@@ -1,0 +1,190 @@
+/* Admin Berita Styles - Updated to match public theme */
+:root {
+    --primary-color: #dc3545;
+    --secondary-color: #ffc107;
+    --dark-color: #495057;
+    --light-color: #ffffff;
+    --border-radius: 0.5rem;
+    --transition: all 0.3s ease;
+}
+
+/* Set a consistent thumbnail size */
+.berita-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 2px solid #e9ecef;
+}
+
+.berita-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* Enhanced Card Design */
+.card {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
+    overflow: hidden;
+    background: white;
+}
+
+.card-header {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.05) 0%, rgba(255, 193, 7, 0.05) 100%);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.card-tools .btn-primary {
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+}
+
+.card-body {
+    padding: 0; /* Remove padding to make table full-width */
+}
+
+/* Enhanced Table Design */
+.table-responsive-custom {
+    overflow-x: auto;
+}
+
+.table-berita {
+    width: 100%;
+    border-collapse: separate; /* Use separate for border-spacing */
+    border-spacing: 0 8px; /* Add vertical spacing between rows */
+    table-layout: fixed;
+    background: #f8f9fa; /* Neutral background */
+}
+
+.table-berita thead {
+    background: #f8f9fa;
+}
+
+.table-berita thead th {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    color: #495057;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #dee2e6;
+    text-align: left;
+    white-space: nowrap; /* Prevent header text from wrapping */
+}
+
+.table-berita tbody tr {
+    transition: var(--transition);
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: var(--border-radius);
+}
+
+.table-berita tbody tr:hover {
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.1);
+    transform: translateY(-2px) scale(1.01);
+    z-index: 2;
+    position: relative;
+}
+
+.table-berita tbody td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    border: none; /* Remove cell borders */
+}
+
+.table-berita tbody td:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+.table-berita tbody td:last-child {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+/* Column specific styles */
+.table-berita .col-no {
+    width: 5%;
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.table-berita .col-image {
+    width: 100px; /* Fixed width for image container */
+}
+
+.table-berita .col-title {
+    width: 40%;
+}
+
+.news-title-cell {
+    max-width: 100%; /* Use parent width */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.table-berita .col-author,
+.table-berita .col-date {
+    width: 20%;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.table-berita .col-actions {
+    width: 15%;
+    text-align: right;
+}
+
+/* Action Buttons */
+.btn-action-group {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    border: none;
+    font-weight: 500;
+}
+
+/* Empty State */
+.empty-state-row td {
+    padding: 3rem 1rem !important;
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.1rem;
+    background: #fff;
+}

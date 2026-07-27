@@ -1,0 +1,769 @@
+/* --- Font Definitions (Local) --- */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-Regular.woff2') format('woff2'),
+       url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-Bold.woff2') format('woff2'),
+       url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tambahan font weight untuk fleksibilitas */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Global Font Setting === */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* === General Purpose Classes from inline styles === */
+
+/* --- Fix Logo Size & Alignment --- */
+.navbar-logo {
+    height: 35px; /* Ukuran logo di header */
+    width: auto;
+}
+
+.footer-logo {
+    height: 45px; /* Ukuran logo di footer */
+    width: auto;
+}
+
+/* === Header & Footer Styling === */
+/* Header/Navbar dengan gradient yang modern dan konsisten */
+.navbar-dark {
+    background: linear-gradient(135deg, #dc3545 0%, #000000 50%, #ffc107 100%) !important;
+    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.4);
+    border-bottom: 2px solid rgba(255, 193, 7, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: #ffc107 !important;
+    transform: scale(1.02);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1rem !important;
+    border-radius: 8px;
+    margin: 0 3px;
+    position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffc107, #fff);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+    background-color: rgba(255, 193, 7, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::before {
+    width: 80%;
+}
+
+.navbar-dark .btn-outline-light {
+    border: 2px solid rgba(255, 193, 7, 0.8);
+    color: #ffc107;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: rgba(255, 193, 7, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-dark .btn-outline-light:hover {
+    background: linear-gradient(135deg, #ffc107, #ffed4e);
+    color: #000;
+    border-color: #ffc107;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+}
+
+/* Footer dengan desain yang konsisten dengan tema */
+.footer {
+    background: linear-gradient(135deg, #000000 0%, #dc3545 50%, #000000 100%) !important;
+    color: #fff !important;
+    border-top: 3px solid #ffc107;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footerPattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1" fill="white" opacity="0.05"/><circle cx="5" cy="5" r="0.5" fill="%23ffc107" opacity="0.1"/><circle cx="25" cy="25" r="0.5" fill="%23dc3545" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23footerPattern)"/></svg>');
+    pointer-events: none;
+}
+
+.footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 500;
+}
+
+.footer h6 {
+    color: #ffc107 !important;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer .text-light {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.footer .opacity-75 {
+    opacity: 0.8 !important;
+}
+
+/* === UNIFIED PUBLIC DESIGN SYSTEM === */
+
+/* Shared Hero Section Styles */
+.hero-section-unified {
+    background: linear-gradient(135deg, #dc3545 0%, #000000 50%, #ffc107 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section-unified::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="heroPattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="0.5" fill="white" opacity="0.1"/><circle cx="18" cy="18" r="0.3" fill="white" opacity="0.1"/><circle cx="10" cy="15" r="0.4" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23heroPattern)"/></svg>');
+    pointer-events: none;
+    animation: heroFloat 20s ease-in-out infinite;
+}
+
+.hero-pattern-unified {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1" fill="white" opacity="0.1"/><circle cx="5" cy="5" r="0.5" fill="%23ffc107" opacity="0.15"/><circle cx="25" cy="25" r="0.5" fill="%23dc3545" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    pointer-events: none;
+}
+
+.hero-particles-unified {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(220, 53, 69, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content-unified {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-title-unified {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle-unified {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-badge-unified {
+    background: rgba(255, 193, 7, 0.9);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+.hero-icon-unified {
+    font-size: 6rem;
+    opacity: 0.8;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-wave-unified {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.hero-wave-unified svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 120px;
+}
+
+.hero-wave-unified .shape-fill {
+    fill: #ffffff;
+}
+
+/* Unified Card System */
+.card-unified {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    height: 100%;
+    border: 1px solid rgba(220, 53, 69, 0.1);
+}
+
+.card-unified:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(220, 53, 69, 0.2);
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+.card-unified::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #dc3545 0%, #ffc107 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card-unified:hover::before {
+    opacity: 1;
+}
+
+.card-header-unified {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header-unified::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cardPattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23cardPattern)"/></svg>');
+    pointer-events: none;
+}
+
+.card-body-unified {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 120px);
+}
+
+.card-title-unified {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    line-height: 1.3;
+}
+
+.card-description-unified {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-footer-unified {
+    padding: 1.5rem;
+    background: rgba(248, 249, 250, 0.8);
+    border-top: 1px solid #e9ecef;
+    margin-top: auto;
+}
+
+/* Unified Badge System */
+.badge-unified {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-unified.primary {
+    background: linear-gradient(135deg, #dc3545 0%, #e74c3c 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.badge-unified.secondary {
+    background: linear-gradient(135deg, #ffc107 0%, #ffed4e 100%);
+    color: #000;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+}
+
+.badge-unified.success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.badge-unified.info {
+    background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(23, 162, 184, 0.3);
+}
+
+/* Unified Button System */
+.btn-unified {
+    background: linear-gradient(135deg, #dc3545 0%, #e74c3c 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.btn-unified::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-unified:hover::before {
+    left: 100%;
+}
+
+.btn-unified:hover {
+    background: linear-gradient(135deg, #e74c3c 0%, #dc3545 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+    color: white;
+}
+
+.btn-unified.secondary {
+    background: linear-gradient(135deg, #ffc107 0%, #ffed4e 100%);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.btn-unified.secondary:hover {
+    background: linear-gradient(135deg, #ffed4e 0%, #ffc107 100%);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+    color: #000;
+}
+
+/* Unified Detail Item System */
+.detail-item-unified {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.detail-item-unified:hover {
+    background: rgba(220, 53, 69, 0.05);
+    transform: translateX(5px);
+}
+
+.detail-item-unified i {
+    width: 20px;
+    text-align: center;
+    color: #dc3545;
+    font-size: 1.1rem;
+}
+
+.detail-item-unified span {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Unified Filter System */
+.filter-section-unified {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(220, 53, 69, 0.1);
+}
+
+.filter-container-unified {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid rgba(220, 53, 69, 0.1);
+    transition: all 0.3s ease;
+}
+
+.filter-container-unified:hover {
+    border-color: rgba(220, 53, 69, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.filter-container-unified .form-select {
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    color: #2c3e50;
+    padding: 0.25rem 0.5rem;
+}
+
+.filter-container-unified .form-select:focus {
+    box-shadow: none;
+    border: none;
+}
+
+/* Legend System */
+.legend-unified {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.legend-item-unified {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid rgba(220, 53, 69, 0.1);
+    transition: all 0.3s ease;
+}
+
+.legend-item-unified:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+.legend-color-unified {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Unified Statistics Section */
+.stats-section-unified {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.stats-section-unified::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="statsPattern" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="1" fill="rgba(220,53,69,0.1)"/><circle cx="5" cy="5" r="0.5" fill="rgba(255,193,7,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23statsPattern)"/></svg>');
+    pointer-events: none;
+}
+
+.stat-card-unified {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid transparent;
+}
+
+.stat-card-unified::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #dc3545 0%, #ffc107 100%);
+}
+
+.stat-card-unified:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(220, 53, 69, 0.2);
+}
+
+.stat-icon-unified {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    background: linear-gradient(135deg, #dc3545 0%, #e74c3c 100%);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+}
+
+.stat-content-unified h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.stat-content-unified p {
+    color: #6c757d;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Unified Empty State */
+.empty-state-unified {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    border: 2px dashed #dee2e6;
+}
+
+.empty-icon-unified {
+    font-size: 4rem;
+    color: #dee2e6;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+}
+
+.empty-title-unified {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.empty-text-unified {
+    color: #adb5bd;
+    font-size: 0.95rem;
+}
+
+/* Unified Animations */
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Unified System */
+@media (max-width: 768px) {
+    .hero-title-unified {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle-unified {
+        font-size: 1.1rem;
+    }
+    
+    .hero-badge-unified {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .hero-icon-unified {
+        font-size: 4rem;
+    }
+    
+    .card-unified {
+        margin-bottom: 1.5rem;
+    }
+    
+    .stats-section-unified {
+        padding: 2rem 1rem;
+    }
+    
+    .stat-card-unified {
+        padding: 1.5rem;
+    }
+    
+    .stat-content-unified h3 {
+        font-size: 2rem;
+    }
+    
+    .legend-unified {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .filter-container-unified {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section-unified {
+        min-height: 50vh;
+        padding: 2rem 0;
+    }
+    
+    .hero-title-unified {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle-unified {
+        font-size: 1rem;
+    }
+    
+    .card-body-unified {
+        padding: 1rem;
+    }
+    
+    .card-footer-unified {
+        padding: 1rem;
+    }
+    
+    .empty-state-unified {
+        padding: 2rem 1rem;
+    }
+}

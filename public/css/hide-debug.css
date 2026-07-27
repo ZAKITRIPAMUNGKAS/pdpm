@@ -1,0 +1,93 @@
+/* Hide CodeIgniter Debug Toolbar */
+#toolbarContainer,
+.ci-label,
+.debug-bar,
+.debug-bar-ndisplay,
+.debug-view,
+.debug-view-path,
+.ci-debug-bar,
+.ci-debug-bar *,
+#debug-icon,
+#debug-icon-link,
+.debug-bar-width,
+.debug-bar-alignRight,
+.debug-bar-alignLeft,
+.debug-bar-ndisplay,
+.debug-bar-tab,
+.debug-bar-panel,
+.debug-bar-timeline,
+.debug-bar-vars,
+.debug-bar-config,
+.debug-bar-files,
+.debug-bar-routes,
+.debug-bar-events,
+.debug-bar-logs,
+.debug-bar-database,
+.debug-bar-history,
+.debug-bar-collector,
+.debug-bar-collector-content,
+.debug-bar-collector-title,
+.debug-bar-collector-data,
+.debug-bar-collector-vars,
+.debug-bar-collector-config,
+.debug-bar-collector-files,
+.debug-bar-collector-routes,
+.debug-bar-collector-events,
+.debug-bar-collector-logs,
+.debug-bar-collector-database,
+.debug-bar-collector-history {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    z-index: -9999 !important;
+}
+
+/* Hide any CodeIgniter branding */
+.ci-logo,
+.codeigniter-logo,
+.ci-branding,
+.powered-by-ci,
+.powered-by-codeigniter,
+.ci-footer,
+.ci-watermark,
+.ci-badge,
+.framework-logo,
+.framework-branding {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide debug info in production */
+.debug-info,
+.debug-output,
+.debug-trace,
+.debug-error,
+.debug-warning,
+.debug-notice {
+    display: none !important;
+}
+
+/* Ensure clean production appearance */
+body.production {
+    position: relative;
+}
+
+body.production::after {
+    display: none !important;
+}
+
+/* Remove any floating debug elements */
+div[style*="position: fixed"][style*="bottom"],
+div[style*="position: absolute"][style*="bottom"],
+div[id*="debug"],
+div[class*="debug"],
+div[id*="toolbar"],
+div[class*="toolbar"] {
+    display: none !important;
+}

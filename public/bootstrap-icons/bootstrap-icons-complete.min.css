@@ -1,0 +1,122 @@
+/*!
+ * Bootstrap Icons v1.11.3 (https://icons.getbootstrap.com/)
+ * Copyright 2019-2024 The Bootstrap Authors
+ * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
+ */
+@font-face{font-display:block;font-family:bootstrap-icons;src:url("fonts/fonts/bootstrap-icons.woff2") format("woff2"),url("fonts/fonts/bootstrap-icons.woff") format("woff")}
+[class^="bi-"]::before,[class*=" bi-"]::before,.bi::before{display:inline-block;font-family:bootstrap-icons!important;font-style:normal;font-weight:normal!important;font-variant:normal;text-transform:none;line-height:1;vertical-align:-.125em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+/* Essential Icons */
+.bi-arrow-left::before{content:"\F12F"}
+.bi-arrow-right::before{content:"\f138"}
+.bi-arrow-clockwise::before{content:"\f134"}
+.bi-box-arrow-in-right::before{content:"\f1c0"}
+.bi-box-arrow-up-right::before{content:"\f1c4"}
+.bi-person-plus::before{content:"\f4da"}
+.bi-person-fill::before{content:"\f4da"}
+.bi-person::before{content:"\f4d9"}
+.bi-person-badge::before{content:"\f4d0"}
+.bi-person-gear-fill::before{content:"\f4e9"}
+.bi-person-check-fill::before{content:"\f4e7"}
+.bi-person-lines-fill::before{content:"\f4e8"}
+.bi-people::before{content:"\f4d6"}
+.bi-people-fill::before{content:"\f4d7"}
+
+/* Form & Input Icons */
+.bi-envelope::before{content:"\f32f"}
+.bi-lock::before{content:"\f456"}
+.bi-key::before{content:"\f43e"}
+.bi-eye::before{content:"\f341"}
+.bi-eye-slash::before{content:"\f342"}
+.bi-check2-all::before{content:"\f11c"}
+.bi-telephone::before{content:"\f5a3"}
+.bi-camera::before{content:"\f1c6"}
+.bi-calendar-date::before{content:"\F1E4"}
+.bi-card-text::before{content:"\f1d1"}
+.bi-upload::before{content:"\f5b7"}
+.bi-download::before{content:"\f26c"}
+
+/* Navigation Icons */
+.bi-speedometer2::before{content:"\f58c"}
+.bi-newspaper::before{content:"\F4A3"}
+.bi-calendar-event::before{content:"\f145"}
+.bi-images::before{content:"\f42a"}
+.bi-image::before{content:"\f429"}
+.bi-grid-3x3-gap::before{content:"\f3d2"}
+
+/* Organization Icons */
+.bi-building::before{content:"\f1ad"}
+.bi-geo-alt::before{content:"\f3c5"}
+.bi-globe::before{content:"\f3d0"}
+.bi-layers::before{content:"\f44c"}
+.bi-diagram-3::before{content:"\f227"}
+.bi-star::before{content:"\f585"}
+.bi-star-fill::before{content:"\f586"}
+.bi-shield-check::before{content:"\f565"}
+.bi-list-task::before{content:"\f45d"}
+
+/* Education & Training Icons */
+.bi-mortarboard::before{content:"\f479"}
+.bi-book::before{content:"\f1a7"}
+.bi-bookmark::before{content:"\f1a8"}
+
+/* Communication Icons */
+.bi-chat-dots::before{content:"\f1d9"}
+.bi-send::before{content:"\f552"}
+.bi-share::before{content:"\f564"}
+.bi-telephone-fill::before{content:"\F5C1"}
+.bi-whatsapp::before{content:"\F618"}
+
+/* Social Media Icons */
+.bi-facebook::before{content:"\f344"}
+.bi-instagram::before{content:"\f437"}
+.bi-youtube::before{content:"\f5b2"}
+.bi-twitter-x::before{content:"\f5ef"}
+
+/* Time & Date Icons */
+.bi-clock::before{content:"\f1a2"}
+.bi-calendar::before{content:"\f143"}
+
+/* Action Icons */
+.bi-trash3::before{content:"\F78B"}
+.bi-pencil::before{content:"\F4CB"}
+.bi-plus::before{content:"\f4fe"}
+.bi-dash::before{content:"\f229"}
+.bi-x::before{content:"\f62a"}
+.bi-check::before{content:"\f10f"}
+.bi-check-circle::before{content:"\f111"}
+.bi-exclamation-circle::before{content:"\f33a"}
+.bi-exclamation-triangle::before{content:"\f33c"}
+.bi-info-circle::before{content:"\f431"}
+
+/* View & Zoom Icons */
+.bi-zoom-in::before{content:"\f62f"}
+.bi-zoom-out::before{content:"\f630"}
+.bi-fullscreen::before{content:"\f364"}
+
+/* File & Document Icons */
+.bi-file-earmark::before{content:"\f32b"}
+.bi-file-text::before{content:"\f334"}
+.bi-folder::before{content:"\f35c"}
+
+/* Misc Icons */
+.bi-tag::before{content:"\f59c"}
+.bi-tags::before{content:"\f59d"}
+.bi-three-dots::before{content:"\f5a6"}
+.bi-gear::before{content:"\f3e5"}
+.bi-house::before{content:"\f425"}
+.bi-search::before{content:"\f52a"}
+.bi-filter::before{content:"\f349"}
+.bi-sort-down::before{content:"\f578"}
+.bi-sort-up::before{content:"\f57a"}
+.bi-rocket-takeoff::before{content:"\f53a"}
+
+/* Profile Page Specific Icons */
+.bi-clock-history::before{content:"\f1a3"}
+.bi-bullseye::before{content:"\f1b0"}
+.bi-eye::before{content:"\f341"}
+.bi-hammer::before{content:"\f3e8"}
+.bi-handshake::before{content:"\f3e9"}
+.bi-laptop::before{content:"\f44e"}
+.bi-palette::before{content:"\f4c4"}
+.bi-tree::before{content:"\f5a8"}

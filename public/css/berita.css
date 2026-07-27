@@ -1,0 +1,322 @@
+/* Berita Page Styles */
+:root {
+    --primary-color: #dc3545;
+    --secondary-color: #ffc107;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 50%, var(--secondary-color) 100%);
+    color: white;
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pagePattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="0.5" fill="white" opacity="0.1"/><circle cx="18" cy="18" r="0.3" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23pagePattern)"/></svg>');
+    pointer-events: none;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* News Cards */
+.news-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(220, 53, 69, 0.15);
+    border-color: var(--primary-color);
+}
+
+.news-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.news-card:hover .news-image {
+    transform: scale(1.05);
+}
+
+.news-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.news-card:hover .news-overlay {
+    opacity: 1;
+}
+
+.news-badge {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #e74c3c 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.news-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.meta-item i {
+    font-size: 0.8rem;
+}
+
+.news-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.news-title a {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-title a:hover {
+    color: var(--primary-color);
+}
+
+.news-excerpt {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.news-footer {
+    margin-top: auto;
+}
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.read-more-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(5px);
+}
+
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.empty-icon {
+    margin-bottom: 2rem;
+}
+
+.empty-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.empty-text {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.csp-anim-delay-02s {
+    animation-delay: 0.2s;
+}
+
+.csp-anim-delay-04s {
+    animation-delay: 0.4s;
+}
+
+/* Icon sizes */
+.csp-icon-3rem {
+    font-size: 3rem !important;
+}
+
+.csp-icon-2rem {
+    font-size: 2rem !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 3rem 0 2rem;
+    }
+    
+    .news-content {
+        padding: 1.5rem;
+    }
+    
+    .news-title {
+        font-size: 1.2rem;
+    }
+    
+    .news-meta {
+        gap: 0.5rem;
+    }
+    
+    .meta-item {
+        font-size: 0.8rem;
+    }
+    
+    .empty-state {
+        padding: 3rem 1rem;
+    }
+    
+    .empty-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header {
+        padding: 2rem 0 1.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .news-image-container {
+        height: 200px;
+    }
+    
+    .news-content {
+        padding: 1rem;
+    }
+    
+    .news-title {
+        font-size: 1.1rem;
+    }
+    
+    .news-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .meta-item {
+        font-size: 0.75rem;
+    }
+    
+    .read-more-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}

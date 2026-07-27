@@ -1,0 +1,33 @@
+/*!
+ * Bootstrap Icons v1.11.3 (https://icons.getbootstrap.com/)
+ * Copyright 2019-2024 The Bootstrap Authors
+ * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
+ */
+@font-face{font-display:block;font-family:bootstrap-icons;src:url("fonts/fonts/bootstrap-icons.woff2") format("woff2"),url("fonts/fonts/bootstrap-icons.woff") format("woff")}
+[class^="bi-"]::before,[class*=" bi-"]::before,.bi::before{display:inline-block;font-family:bootstrap-icons!important;font-style:normal;font-weight:normal!important;font-variant:normal;text-transform:none;line-height:1;vertical-align:-.125em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.bi-star-fill::before{content:"\f586"}
+.bi-person-plus::before{content:"\f4da"}
+.bi-info-circle::before{content:"\f431"}
+.bi-facebook::before{content:"\f344"}
+.bi-instagram::before{content:"\f437"}
+.bi-youtube::before{content:"\f5b2"}
+.bi-twitter-x::before{content:"\f5ef"}
+.bi-people::before{content:"\f4d6"}
+.bi-building::before{content:"\f1ad"}
+.bi-geo-alt::before{content:"\f3c5"}
+.bi-shield-check::before{content:"\f565"}
+.bi-mortarboard::before{content:"\f479"}
+.bi-diagram-3::before{content:"\f227"}
+.bi-clock::before{content:"\f1a2"}
+.bi-calendar-event::before{content:"\f145"}
+.bi-person-lines-fill::before{content:"\f4e8"}
+.bi-arrow-right::before{content:"\f138"}
+.bi-newspaper::before{content:"\f4a5"}
+.bi-rocket-takeoff::before{content:"\f53a"}
+.bi-speedometer2::before{content:"\f58c"}
+.bi-person-fill::before{content:"\f4da"}
+.bi-person-gear-fill::before{content:"\f4e9"}
+.bi-images::before{content:"\f42a"}
+.bi-person-check-fill::before{content:"\f4e7"}
+.bi-eye::before{content:"\f341"}
+.bi-eye-slash::before{content:"\f342"}

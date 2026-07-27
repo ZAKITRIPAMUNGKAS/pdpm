@@ -1,0 +1,470 @@
+/* ===================================================
+   PDPM KARANGANYAR - RESPONSIVE DASHBOARD SYSTEM
+   Unified responsive design for all dashboard pages
+   Target: Mobile (320px+), Tablet (768px+), Desktop (1024px+)
+   =================================================== */
+
+/* ===================================================
+   1. BASE LAYOUT
+   =================================================== */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Main content fluid adjust */
+.main-content-minimalist {
+    background: #f8f9fa;
+    min-height: calc(100vh - 56px);
+    padding: 1.5rem 1.75rem;
+    flex: 1;
+    min-width: 0; /* prevent overflow on flex children */
+    transition: padding 0.3s ease;
+}
+
+/* Page title row */
+.main-content-minimalist .d-flex.border-bottom h1.h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===================================================
+   2. SIDEBAR MOBILE OVERLAY
+   =================================================== */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 56px;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1039;
+    backdrop-filter: blur(2px);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar-overlay.show {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===================================================
+   3. HAMBURGER BUTTON IN NAVBAR (mobile)
+   =================================================== */
+.btn-sidebar-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+.btn-sidebar-toggle:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* ===================================================
+   4. CARD / TABLE RESPONSIVE HELPERS
+   =================================================== */
+
+/* Card responsive gap */
+.responsive-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+/* Scrollable table wrapper */
+.table-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0.5rem;
+}
+
+/* Stat card compact on small screen */
+.stat-card .stat-number {
+    word-break: break-all;
+}
+
+/* Filter bar wrap */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* ===================================================
+   5. FORM LAYOUT RESPONSIVE
+   =================================================== */
+
+/* Form columns collapsible */
+.form-responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* ===================================================
+   6. TABLET BREAKPOINT (≤ 991px)
+   =================================================== */
+
+@media (max-width: 991.98px) {
+
+    /* Sidebar: slide-in drawer */
+    #sidebarMenu {
+        position: fixed !important;
+        top: 56px !important;
+        left: -280px !important;
+        width: 260px !important;
+        height: calc(100vh - 56px) !important;
+        z-index: 1040 !important;
+        transition: left 0.3s ease !important;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.15) !important;
+    }
+
+    #sidebarMenu.show {
+        left: 0 !important;
+    }
+
+    /* Main content fills full width */
+    .main-content-minimalist {
+        margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1.25rem 1rem !important;
+    }
+
+    /* Show hamburger button */
+    .btn-sidebar-toggle {
+        display: flex !important;
+    }
+
+    /* Navbar brand compact */
+    .navbar-brand span {
+        font-size: 1rem !important;
+    }
+
+    /* Stat cards: 2 per row on tablet */
+    .responsive-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Form 2-col → 1-col */
+    .form-responsive-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===================================================
+   7. MOBILE BREAKPOINT (≤ 767px)
+   =================================================== */
+
+@media (max-width: 767.98px) {
+
+    /* Main content padding tighter */
+    .main-content-minimalist {
+        padding: 1rem 0.75rem !important;
+    }
+
+    /* Page title smaller */
+    .main-content-minimalist .d-flex.border-bottom h1.h2 {
+        font-size: 1.25rem !important;
+    }
+
+    /* Stat cards: 2 per row min */
+    .responsive-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    /* Metric cards stacked 1-col on very small */
+    .row.g-3.mb-4 > [class*="col-sm-6"] {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Table: compressed text */
+    .table {
+        font-size: 0.8rem !important;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.5rem 0.6rem !important;
+    }
+
+    /* Buttons in table: icon only on small */
+    .table .btn-sm .btn-label-text {
+        display: none;
+    }
+
+    /* Filter bar stacks full-width */
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-bar .form-select,
+    .filter-bar .form-control,
+    .filter-bar .input-group,
+    .filter-bar .btn {
+        width: 100% !important;
+    }
+
+    /* Action buttons row */
+    .action-buttons-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .action-buttons-row .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Cards padding */
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    /* Modal dialog */
+    .modal-dialog {
+        margin: 0.5rem !important;
+        max-width: calc(100% - 1rem) !important;
+    }
+
+    /* Sidebar user profile compact */
+    .sidebar-user-profile .user-name {
+        font-size: 0.85rem !important;
+    }
+
+    /* Dropdown menu */
+    .navbar .dropdown-menu {
+        position: absolute !important;
+    }
+}
+
+/* ===================================================
+   8. SMALL MOBILE (≤ 575px)
+   =================================================== */
+
+@media (max-width: 575.98px) {
+
+    /* Header tighter */
+    .main-content-minimalist {
+        padding: 0.75rem 0.6rem !important;
+    }
+
+    /* Stat cards: 1 per row on very small phones */
+    .responsive-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Metric row stack to single column */
+    .row.g-3.mb-4 > [class*="col-"] {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Navbar brand text abbreviate */
+    .navbar-brand span {
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Table font minimal */
+    .table {
+        font-size: 0.75rem !important;
+    }
+
+    /* Avatar small */
+    .avatar-img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    /* Badge compact */
+    .badge {
+        font-size: 0.65rem !important;
+        padding: 0.15rem 0.4rem !important;
+    }
+
+    /* Form labels smaller */
+    .form-label {
+        font-size: 0.825rem !important;
+    }
+
+    /* Page section spacing */
+    .mb-4 {
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* Button padding compact */
+    .btn {
+        padding: 0.4rem 0.75rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Card body tight */
+    .card-body {
+        padding: 0.75rem !important;
+    }
+
+    /* Footer smaller */
+    .footer .text-muted {
+        font-size: 0.75rem;
+    }
+}
+
+/* ===================================================
+   9. DESKTOP ENHANCEMENTS (≥ 1200px)
+   =================================================== */
+
+@media (min-width: 1200px) {
+    .main-content-minimalist {
+        padding: 1.75rem 2rem !important;
+    }
+
+    /* Stat cards: 4 per row if space allows */
+    .responsive-card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+/* ===================================================
+   10. NAVBAR RESPONSIVE
+   =================================================== */
+
+.navbar .container {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* Navbar user dropdown compact on mobile */
+@media (max-width: 767.98px) {
+    .navbar .dropdown-toggle {
+        font-size: 0.85rem;
+    }
+    .navbar .dropdown-toggle .bi-person-fill {
+        font-size: 1rem;
+    }
+}
+
+/* ===================================================
+   11. FORMS INSIDE DASHBOARD RESPONSIVE
+   =================================================== */
+
+/* Edit member page form */
+.form-edit-member .row {
+    --bs-gutter-x: 1rem;
+}
+
+@media (max-width: 767.98px) {
+    .form-edit-member .col-md-6,
+    .form-edit-member .col-md-12 {
+        margin-bottom: 0.25rem;
+    }
+
+    /* Preview foto center */
+    .form-edit-member .text-center img {
+        width: 90px !important;
+        height: 90px !important;
+    }
+
+    /* Buttons row end → full width */
+    .form-edit-member .text-end {
+        text-align: left !important;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-edit-member .text-end .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===================================================
+   12. TABLE UTILITY CLASSES
+   =================================================== */
+
+/* Sticky first column for wide tables */
+.table-sticky-first th:first-child,
+.table-sticky-first td:first-child {
+    position: sticky;
+    left: 0;
+    background: #fff;
+    z-index: 2;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.06);
+}
+
+.table-sticky-first thead th:first-child {
+    background: linear-gradient(135deg, #dc3545, #b02a37) !important;
+}
+
+/* ===================================================
+   13. TOUCH TARGET IMPROVEMENTS
+   =================================================== */
+
+@media (max-width: 991.98px) {
+    /* Bigger tap targets */
+    .sidebar-nav .nav-link {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-sm {
+        min-height: 36px;
+        padding: 0.4rem 0.75rem !important;
+    }
+
+    .form-control,
+    .form-select {
+        min-height: 42px;
+    }
+}
+
+/* ===================================================
+   14. PRINT STYLES
+   =================================================== */
+
+@media print {
+    #sidebarMenu,
+    .btn-sidebar-toggle,
+    .sidebar-overlay,
+    .navbar,
+    .footer,
+    .filter-bar .btn {
+        display: none !important;
+    }
+
+    .main-content-minimalist {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .table {
+        font-size: 0.75rem;
+    }
+}

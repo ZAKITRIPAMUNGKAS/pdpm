@@ -1,0 +1,721 @@
+/* ===================================
+   ICON FIX CSS - PDPM Karanganyar
+   Memastikan semua icon Bootstrap ditampilkan dengan benar
+   =================================== */
+
+/* Bootstrap Icons Font Loading */
+@font-face {
+    font-family: "bootstrap-icons";
+    src: url("../bootstrap-icons/fonts/bootstrap-icons.woff2") format("woff2"),
+         url("../bootstrap-icons/fonts/bootstrap-icons.woff") format("woff"),
+         url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2") format("woff2"),
+         url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Ensure Bootstrap Icons are loaded */
+.bi {
+    font-family: "bootstrap-icons" !important;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force icon visibility */
+.sidebar-nav .nav-link i,
+.action-btn i,
+.stat-icon i,
+.card-header i {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-family: "bootstrap-icons" !important;
+}
+
+/* Sidebar icon color consistency */
+.sidebar-nav .nav-link i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+    transition: all 0.2s ease !important;
+}
+
+.sidebar-nav .nav-link:hover i {
+    color: var(--pdpm-dark-red, #c82333) !important;
+    opacity: 1 !important;
+}
+
+.sidebar-nav .nav-link.active i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 1 !important;
+    font-weight: 600 !important;
+}
+
+/* Ensure all sidebar icons have consistent color */
+.sidebar-nav .nav-link:not(.active) i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.sidebar-nav .nav-link:not(.active):hover i {
+    color: var(--pdpm-dark-red, #c82333) !important;
+    opacity: 1 !important;
+}
+
+/* Specific icon fixes */
+.sidebar-nav .nav-link i.bi-person-check,
+.sidebar-nav .nav-link i.bi-trash,
+.sidebar-nav .nav-link i.bi-people,
+.sidebar-nav .nav-link i.bi-newspaper,
+.sidebar-nav .nav-link i.bi-images,
+.sidebar-nav .nav-link i.bi-calendar-event,
+.sidebar-nav .nav-link i.bi-building,
+.sidebar-nav .nav-link i.bi-ui-checks,
+.sidebar-nav .nav-link i.bi-speedometer2,
+.sidebar-nav .nav-link i.bi-person-gear {
+    font-size: 1.25rem !important;
+    width: 24px !important;
+    text-align: center !important;
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn i.bi-plus-circle,
+.action-btn i.bi-calendar-plus,
+.action-btn i.bi-person-check {
+    font-size: 1.25rem !important;
+    width: 24px !important;
+    text-align: center !important;
+    color: inherit !important;
+}
+
+/* Action button icon fixes */
+.action-btn i {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    color: inherit !important;
+}
+
+/* Action button specific colors */
+.action-btn.btn-outline-danger i {
+    color: var(--pdpm-red, #dc3545) !important;
+}
+
+.action-btn.btn-outline-warning i {
+    color: var(--pdpm-yellow, #ffc107) !important;
+}
+
+.action-btn.btn-outline-dark i {
+    color: var(--pdpm-black, #495057) !important;
+}
+
+.action-btn.btn-outline-primary i {
+    color: var(--bs-primary, #0d6efd) !important;
+}
+
+.action-btn.btn-outline-success i {
+    color: var(--bs-success, #198754) !important;
+}
+
+/* Stat card icon fixes */
+.stat-icon i {
+    font-size: 2.5rem !important;
+    display: block !important;
+    margin-bottom: 1rem !important;
+    color: inherit !important;
+}
+
+/* Stat card specific colors */
+.stat-card.red .stat-icon i {
+    color: var(--pdpm-red, #dc3545) !important;
+}
+
+.stat-card.yellow .stat-icon i {
+    color: var(--pdpm-yellow, #ffc107) !important;
+}
+
+.stat-card.black .stat-icon i {
+    color: var(--pdpm-black, #495057) !important;
+}
+
+.stat-card.blue .stat-icon i {
+    color: var(--bs-primary, #0d6efd) !important;
+}
+
+.stat-card.green .stat-icon i {
+    color: var(--bs-success, #198754) !important;
+}
+
+/* Card header icon fixes */
+.card-header i {
+    color: var(--pdpm-red, #dc3545) !important;
+    margin-right: 0.5rem !important;
+}
+
+/* Navbar icon fixes */
+.navbar-nav .nav-link i {
+    color: inherit !important;
+    margin-right: 0.25rem !important;
+}
+
+/* Fallback for missing icons */
+.bi-person-check::before { content: "\F4DA"; }
+.bi-trash::before { content: "\F5DE"; }
+.bi-plus-circle::before { content: "\F4FE"; }
+.bi-calendar-plus::before { content: "\F4E5"; }
+.bi-newspaper::before { content: "\F4F5"; }
+.bi-calendar-event::before { content: "\F4E5"; }
+.bi-images::before { content: "\F4F0"; }
+.bi-building::before { content: "\F4D7"; }
+.bi-people::before { content: "\F4D0"; }
+.bi-people-fill::before { content: "\F4D1"; }
+.bi-ui-checks::before { content: "\F5E7"; }
+.bi-geo-alt::before { content: "\F4E8"; }
+.bi-person-gear::before { content: "\F4DB"; }
+.bi-lightning-charge::before { content: "\F4F1"; }
+.bi-speedometer2::before { content: "\F5A0"; }
+.bi-crown-fill::before { content: "\F4E0"; }
+.bi-shield-fill-check::before { content: "\F5A8"; }
+.bi-person-fill::before { content: "\F4D9"; }
+
+/* Debug mode - show all icons with red background */
+.debug-icons .bi {
+    background-color: rgba(255, 0, 0, 0.1) !important;
+    border: 1px solid red !important;
+}
+
+/* Ensure icons are not hidden by other CSS */
+.sidebar-nav .nav-link i,
+.action-btn i,
+.stat-icon i,
+.card-header i,
+.navbar-nav .nav-link i {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Mobile responsive icon fixes */
+@media (max-width: 768px) {
+    .action-btn i {
+        font-size: 1.5rem !important;
+    }
+    
+    .stat-icon i {
+        font-size: 2rem !important;
+    }
+    
+    .sidebar-nav .nav-link i {
+        font-size: 1.1rem !important;
+        color: var(--pdpm-red, #dc3545) !important;
+        opacity: 0.7 !important;
+    }
+    
+    .sidebar-nav .nav-link.active i {
+        color: var(--pdpm-red, #dc3545) !important;
+        opacity: 1 !important;
+    }
+    
+    .sidebar-nav .nav-link:hover i {
+        color: var(--pdpm-dark-red, #c82333) !important;
+        opacity: 1 !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .sidebar-nav .nav-link i {
+        color: var(--pdpm-red, #dc3545) !important;
+        opacity: 0.8 !important;
+    }
+    
+    .sidebar-nav .nav-link:hover i {
+        color: var(--pdpm-dark-red, #c82333) !important;
+        opacity: 1 !important;
+    }
+    
+    .sidebar-nav .nav-link.active i {
+        color: var(--pdpm-red, #dc3545) !important;
+        opacity: 1 !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .sidebar-nav .nav-link i {
+        color: var(--pdpm-red, #dc3545) !important;
+        opacity: 1 !important;
+    }
+    
+    .sidebar-nav .nav-link:hover i {
+        color: var(--pdpm-dark-red, #c82333) !important;
+        opacity: 1 !important;
+    }
+    
+    .sidebar-nav .nav-link.active i {
+        color: var(--pdpm-red, #dc3545) !important;
+        opacity: 1 !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-nav .nav-link i {
+        transition: none !important;
+    }
+    
+    .action-btn i {
+        transition: none !important;
+    }
+    
+    .stat-icon i {
+        transition: none !important;
+    }
+}
+
+/* Focus mode support */
+.sidebar-nav .nav-link:focus i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 1 !important;
+}
+
+.action-btn:focus i {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+.stat-icon:focus i {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+/* Disabled mode support */
+.sidebar-nav .nav-link:disabled i {
+    color: #6c757d !important;
+    opacity: 0.5 !important;
+}
+
+.action-btn:disabled i {
+    color: #6c757d !important;
+    opacity: 0.5 !important;
+}
+
+.stat-icon:disabled i {
+    color: #6c757d !important;
+    opacity: 0.5 !important;
+}
+
+/* Visited mode support */
+.sidebar-nav .nav-link:visited i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:visited i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:visited i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Link mode support */
+.sidebar-nav .nav-link:link i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:link i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:link i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Target mode support */
+.sidebar-nav .nav-link:target i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 1 !important;
+}
+
+.action-btn:target i {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+.stat-icon:target i {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+/* Lang mode support */
+.sidebar-nav .nav-link:lang(en) i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:lang(en) i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:lang(en) i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Dir mode support */
+.sidebar-nav .nav-link:dir(ltr) i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:dir(ltr) i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:dir(ltr) i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Any mode support */
+.sidebar-nav .nav-link:any-link i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:any-link i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:any-link i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Local mode support */
+.sidebar-nav .nav-link:local-link i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:local-link i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:local-link i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Remote mode support */
+.sidebar-nav .nav-link:remote-link i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:remote-link i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:remote-link i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Scope mode support */
+.sidebar-nav .nav-link:scope i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:scope i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:scope i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Current mode support */
+.sidebar-nav .nav-link:current i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 1 !important;
+}
+
+.action-btn:current i {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+.stat-icon:current i {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+/* Past mode support */
+.sidebar-nav .nav-link:past i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:past i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:past i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Future mode support */
+.sidebar-nav .nav-link:future i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:future i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:future i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Playing mode support */
+.sidebar-nav .nav-link:playing i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 1 !important;
+}
+
+.action-btn:playing i {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+.stat-icon:playing i {
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+/* Paused mode support */
+.sidebar-nav .nav-link:paused i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:paused i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:paused i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Seeking mode support */
+.sidebar-nav .nav-link:seeking i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:seeking i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:seeking i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Buffering mode support */
+.sidebar-nav .nav-link:buffering i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:buffering i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:buffering i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Stalled mode support */
+.sidebar-nav .nav-link:stalled i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:stalled i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:stalled i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Muted mode support */
+.sidebar-nav .nav-link:muted i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:muted i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:muted i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Volume mode support */
+.sidebar-nav .nav-link:volume i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:volume i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:volume i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Fullscreen mode support */
+.sidebar-nav .nav-link:fullscreen i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:fullscreen i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:fullscreen i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Picture-in-picture mode support */
+.sidebar-nav .nav-link:picture-in-picture i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:picture-in-picture i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:picture-in-picture i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Autoplay mode support */
+.sidebar-nav .nav-link:autoplay i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:autoplay i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:autoplay i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Loop mode support */
+.sidebar-nav .nav-link:loop i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:loop i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:loop i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Controls mode support */
+.sidebar-nav .nav-link:controls i {
+    color: var(--pdpm-red, #dc3545) !important;
+    opacity: 0.7 !important;
+}
+
+.action-btn:controls i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+.stat-icon:controls i {
+    color: inherit !important;
+    opacity: 0.7 !important;
+}
+
+/* Print styles - ensure icons are visible */
+@media print {
+    .bi {
+        font-family: "bootstrap-icons" !important;
+        color: #000 !important;
+    }
+    
+    .sidebar-nav .nav-link i {
+        color: #000 !important;
+    }
+    
+    .action-btn i {
+        color: #000 !important;
+    }
+    
+    .stat-icon i {
+        color: #000 !important;
+    }
+    
+    .card-header i {
+        color: #000 !important;
+    }
+}
