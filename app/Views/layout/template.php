@@ -246,19 +246,23 @@
     </div>
     
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-light border-top">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center">
-                        <img src="<?= base_url('logo.png') ?>" alt="PDPM" height="30" class="me-2">
-                        <span class="text-muted">© <?= date('Y') ?> PDPM Karanganyar. All rights reserved.</span>
+    <footer class="footer mt-auto py-3 bg-white border-top shadow-sm">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center gy-2">
+                <div class="col-md-6 col-12 text-center text-md-start">
+                    <div class="d-inline-flex align-items-center">
+                        <img src="<?= base_url('logo.png') ?>" alt="PDPM Logo" style="height: 28px; width: auto;" class="me-2">
+                        <span class="small text-secondary fw-medium">
+                            © <?= date('Y') ?> <strong class="text-dark">PDPM Karanganyar</strong>. Pemuda Muhammadiyah.
+                        </span>
                     </div>
                 </div>
-                <div class="col-md-6 text-md-end mt-2 mt-md-0">
-                    <a href="#" class="text-muted text-decoration-none me-3">Tentang</a>
-                    <a href="#" class="text-muted text-decoration-none me-3">Kontak</a>
-                    <a href="#" class="text-muted text-decoration-none">Bantuan</a>
+                <div class="col-md-6 col-12 text-center text-md-end">
+                    <div class="footer-links small">
+                        <a href="<?= site_url('profil') ?>" class="text-secondary text-decoration-none me-3 hover-danger">Tentang</a>
+                        <a href="<?= site_url('kontak') ?>" class="text-secondary text-decoration-none me-3 hover-danger">Kontak</a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="text-secondary text-decoration-none hover-danger">Bantuan</a>
+                    </div>
                 </div>
             </div>
         </div>
