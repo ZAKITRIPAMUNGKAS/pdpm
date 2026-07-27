@@ -498,7 +498,6 @@
         showNotification,
         showSkeleton,
         hideSkeleton,
-        updateActivityFeed,
         formatNumber
     };
 
