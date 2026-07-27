@@ -322,26 +322,7 @@
     }
 }
 
-/* Dark Mode Support (Optional) */
-@media (prefers-color-scheme: dark) {
-    .dropdown-menu {
-        background: #2d2d2d;
-        border-top-color: #dc3545;
-    }
-    
-    .dropdown-item {
-        color: #f8f9fa;
-    }
-    
-    .dropdown-item:hover {
-        background: linear-gradient(90deg, rgba(220, 53, 69, 0.2), rgba(255, 193, 7, 0.2));
-        color: #ffc107;
-    }
-    
-    .dropdown-divider {
-        border-top-color: rgba(255, 255, 255, 0.1);
-    }
-}
+/* Dark Mode Support Disabled for Consistent Theme */
 
 /* Additional Hover Effects */
 .navbar-brand {

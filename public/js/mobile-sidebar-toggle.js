@@ -5,38 +5,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Create sidebar toggle button for mobile
-    const createMobileToggle = () => {
-        const navbar = document.querySelector('.navbar');
-        const navbarBrand = document.querySelector('.navbar-brand');
-        
-        if (navbar && navbarBrand && window.innerWidth <= 768) {
-            // Check if toggle button already exists
-            if (!document.querySelector('.sidebar-toggle-mobile')) {
-                const toggleBtn = document.createElement('button');
-                toggleBtn.className = 'btn btn-link sidebar-toggle-mobile';
-                toggleBtn.innerHTML = '<i class="bi bi-list"></i>';
-                toggleBtn.style.cssText = `
-                    position: absolute;
-                    left: 15px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    color: #ffc107;
-                    font-size: 1.5rem;
-                    padding: 0.25rem;
-                    border: none;
-                    background: transparent;
-                    z-index: 1031;
-                `;
-                
-                // Insert toggle button before navbar brand
-                navbarBrand.parentNode.insertBefore(toggleBtn, navbarBrand);
-                
-                // Adjust navbar brand margin on mobile
-                navbarBrand.style.marginLeft = '45px';
-            }
-        }
-    };
+    // Duplicate toggle creation removed - template.php handles #sidebarToggleBtn
+    const createMobileToggle = () => {};
     
     // Create overlay element
     const createOverlay = () => {
