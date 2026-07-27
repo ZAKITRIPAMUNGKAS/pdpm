@@ -636,11 +636,14 @@
                                                     </p>
                                                     <small class="text-break"><?= esc(word_limiter($agenda['deskripsi'] ?? 'Deskripsi agenda', 15)) ?></small>
                                                 </div>
-                                                <div class="ms-3">
-                                                    <a href="<?= site_url('dashboard/add-to-calendar/' . $agenda['id']) ?>" class="btn btn-sm btn-outline-primary mb-1" title="Tambahkan ke Kalender">
+                                                <div class="ms-3 d-flex flex-column flex-sm-row gap-1 align-items-end align-items-sm-center">
+                                                    <a href="<?= site_url('absensi/hadir/' . $agenda['id']) ?>" class="btn btn-sm btn-success fw-bold text-nowrap" title="Absensi GPS Sekarang">
+                                                        <i class="bi bi-geo-alt-fill me-1"></i>Absen GPS
+                                                    </a>
+                                                    <a href="<?= site_url('dashboard/add-to-calendar/' . $agenda['id']) ?>" class="btn btn-sm btn-outline-danger" title="Tambahkan ke Kalender">
                                                         <i class="bi bi-calendar-plus"></i>
                                                     </a>
-                                                    <a href="<?= site_url('absensi/agenda/' . $agenda['id']) ?>" class="btn btn-sm btn-primary" title="Lihat Detail">
+                                                    <a href="<?= site_url('absensi/agenda/' . $agenda['id']) ?>" class="btn btn-sm btn-primary" title="Lihat Detail Agenda">
                                                         <i class="bi bi-eye"></i>
                                                     </a>
                                                 </div>
