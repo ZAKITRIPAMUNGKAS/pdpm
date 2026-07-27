@@ -297,10 +297,9 @@
                                class="btn btn-outline-warning btn-sm">
                                 <i class="bi bi-pencil me-1"></i>Edit
                             </a>
-                            <button type="button" class="btn btn-outline-info btn-sm" 
-                                    onclick="viewDetails(<?= $item['id'] ?>)">
+                            <a href="<?= site_url('absensi/agenda/' . $item['id']) ?>" class="btn btn-outline-info btn-sm">
                                 <i class="bi bi-eye me-1"></i>Detail
-                            </button>
+                            </a>
                             <form action="<?= site_url('admin-agenda/delete/' . $item['id']) ?>" 
                                   method="post" class="d-inline flex-fill" 
                                   onsubmit="return confirm('Apakah Anda yakin ingin menghapus agenda ini?');">
