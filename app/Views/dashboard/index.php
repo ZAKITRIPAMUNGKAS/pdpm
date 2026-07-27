@@ -30,57 +30,57 @@
     <!-- ================================================================= -->
     <?php if ($dashboard_type === 'super_admin'): ?>
         <!-- Enhanced Statistics Cards for Super Admin -->
-        <div class="row g-4 mb-4">
-            <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="row g-2 g-md-3 mb-4">
+            <div class="col-6 col-md-4 col-xl-3">
                 <div class="stat-card red">
                     <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
                     <div class="stat-number"><?= number_format($totalAnggota) ?></div>
                     <div class="stat-label">Total Anggota</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-4 col-xl-3">
                 <div class="stat-card yellow">
                     <div class="stat-icon"><i class="bi bi-newspaper"></i></div>
                     <div class="stat-number"><?= number_format($totalBerita) ?></div>
                     <div class="stat-label">Total Berita</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-4 col-xl-3">
                 <div class="stat-card black">
                     <div class="stat-icon"><i class="bi bi-calendar-event"></i></div>
                     <div class="stat-number"><?= number_format($totalAgenda) ?></div>
                     <div class="stat-label">Total Agenda</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-4 col-xl-3">
                 <div class="stat-card red">
                     <div class="stat-icon"><i class="bi bi-person-check"></i></div>
                     <div class="stat-number"><?= number_format($pendingVerifikasi) ?></div>
                     <div class="stat-label">Verifikasi Baru</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-4 col-xl-3">
                 <div class="stat-card yellow">
                     <div class="stat-icon"><i class="bi bi-images"></i></div>
                     <div class="stat-number"><?= number_format($totalGaleri) ?></div>
                     <div class="stat-label">Total Galeri</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-4 col-xl-3">
                 <div class="stat-card black">
                     <div class="stat-icon"><i class="bi bi-building"></i></div>
                     <div class="stat-number"><?= number_format($totalCabang) ?></div>
                     <div class="stat-label">Total Cabang</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-4 col-xl-3">
                 <div class="stat-card red">
                     <div class="stat-icon"><i class="bi bi-geo-alt"></i></div>
                     <div class="stat-number"><?= number_format($totalRanting) ?></div>
                     <div class="stat-label">Total Ranting</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-4 col-xl-3">
                 <div class="stat-card yellow">
                     <div class="stat-icon"><i class="bi bi-person-gear"></i></div>
                     <div class="stat-number"><?= number_format($totalAdmin) ?></div>
@@ -382,29 +382,29 @@
     <!-- ================================================================= -->
     <?php if ($dashboard_type === 'admin'): ?>
         <!-- Enhanced Statistics Cards for Admin -->
-        <div class="row g-4 mb-4">
-            <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="row g-2 g-md-3 mb-4">
+            <div class="col-6 col-md-3">
                 <div class="stat-card red">
                     <div class="stat-icon"><i class="bi bi-people"></i></div>
                     <div class="stat-number"><?= number_format($totalAnggota) ?></div>
                     <div class="stat-label">Total Anggota</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-3">
                 <div class="stat-card yellow">
                     <div class="stat-icon"><i class="bi bi-newspaper"></i></div>
                     <div class="stat-number"><?= number_format($totalBerita) ?></div>
                     <div class="stat-label">Total Berita</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-3">
                 <div class="stat-card black">
                     <div class="stat-icon"><i class="bi bi-calendar-event"></i></div>
                     <div class="stat-number"><?= number_format($totalAgenda) ?></div>
                     <div class="stat-label">Total Agenda</div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-6 col-md-3">
                 <div class="stat-card red">
                     <div class="stat-icon"><i class="bi bi-person-check"></i></div>
                     <div class="stat-number"><?= number_format($pendingVerifikasi) ?></div>

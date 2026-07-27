@@ -1177,3 +1177,60 @@
 	color: #ffffff !important;
 	border-color: #bd2130 !important;
 }
+
+/* Mobile Responsiveness Improvements */
+@media (max-width: 767.98px) {
+    .dashboard-container {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .dashboard-header {
+        padding: 1.25rem 1rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .dashboard-title {
+        font-size: 1.4rem;
+    }
+    
+    .dashboard-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .stat-card {
+        padding: 0.85rem 0.75rem;
+        border-radius: 0.85rem;
+    }
+    
+    .stat-card .stat-number {
+        font-size: 1.75rem;
+    }
+    
+    .stat-card .stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 0;
+    }
+    
+    .stat-card .stat-icon {
+        font-size: 1.8rem;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    
+    .modern-card {
+        border-radius: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    
+    .table-responsive {
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .table th, .table td {
+        white-space: nowrap;
+        padding: 0.5rem 0.75rem;
+    }
+}
