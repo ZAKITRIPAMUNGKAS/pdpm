@@ -315,65 +315,7 @@
     // ===================================
     
     function initializeActivityFeed() {
-        const activityContainer = document.querySelector('.activity-list');
-        if (!activityContainer) return;
-        
-        // Auto-refresh activity feed every 30 seconds
-        setInterval(async () => {
-            try {
-                const response = await fetch('/api/activities/recent', {
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                });
-                
-                if (response.ok) {
-                    const activities = await response.json();
-                    updateActivityFeed(activities);
-                }
-            } catch (error) {
-                console.error('Error fetching activities:', error);
-            }
-        }, 30000);
-    }
-    
-    function updateActivityFeed(activities) {
-        const container = document.querySelector('.activity-list');
-        if (!container || !activities || activities.length === 0) return;
-        
-        // Create new activity items
-        const newItems = activities.slice(0, 5).map(activity => {
-            return createActivityItem(activity);
-        }).join('');
-        
-        // Update container with fade effect
-        container.style.opacity = '0.5';
-        setTimeout(() => {
-            container.innerHTML = newItems;
-            container.style.opacity = '1';
-        }, 300);
-    }
-    
-    function createActivityItem(activity) {
-        const iconClass = activity.type === 'attendance' ? 'bg-success' : 'bg-warning';
-        const icon = activity.type === 'attendance' ? 'check-circle' : 'star-fill';
-        
-        return `
-            <div class="activity-item p-3 border-bottom">
-                <div class="d-flex align-items-start">
-                    <div class="activity-icon me-3">
-                        <div class="icon-circle ${iconClass}">
-                            <i class="bi bi-${icon}"></i>
-                        </div>
-                    </div>
-                    <div class="activity-content flex-grow-1">
-                        <div class="activity-text fw-medium">${activity.title}</div>
-                        <div class="activity-detail text-muted">${activity.description}</div>
-                        <small class="activity-time text-muted">${activity.time}</small>
-                    </div>
-                </div>
-            </div>
-        `;
+        // Activity feed auto-refresh disabled - data is pre-rendered via server
     }
 
     // ===================================
@@ -383,13 +325,16 @@
     function initializeSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
