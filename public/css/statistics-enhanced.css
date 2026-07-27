@@ -544,22 +544,34 @@
     }
 }
 
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    .statistics-card,
-    .stat-item,
-    .summary-item,
-    .progress-bar,
-    .badge {
-        animation: none;
-        transition: none;
+/* Mobile Responsive Table and Card Fixes */
+@media (max-width: 767.98px) {
+    .modern-card .card-body {
+        padding: 0.85rem !important;
     }
-    
-    .chart-container::before {
-        animation: none;
+
+    .modern-card .table-responsive {
+        margin: 0 -0.85rem;
+        width: calc(100% + 1.7rem);
     }
-    
-    .progress-shine {
-        animation: none;
+
+    .modern-card .table td, 
+    .modern-card .table th {
+        padding: 0.6rem 0.75rem !important;
+        font-size: 0.8rem !important;
+    }
+
+    .modern-card .badge {
+        font-size: 0.68rem !important;
+        padding: 0.2rem 0.5rem !important;
+        white-space: nowrap;
+    }
+
+    .modern-card .table .fw-bold {
+        font-size: 0.85rem !important;
+    }
+
+    .modern-card .table small {
+        font-size: 0.72rem !important;
     }
 }
