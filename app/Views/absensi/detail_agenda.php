@@ -343,17 +343,17 @@
                         </div>
                     </div>
 
-                    <div class="mt-4">
-                        <a href="<?= site_url('absensi/agenda') ?>" class="btn btn-outline-secondary">
+                    <div class="mt-4 pt-3 border-top d-flex flex-wrap gap-2 justify-content-between align-items-center">
+                        <a href="<?= site_url('absensi/agenda') ?>" class="btn btn-outline-danger rounded-pill px-4 fw-semibold">
                             <i class="bi bi-arrow-left me-1"></i>
                             Kembali ke Daftar Agenda
                         </a>
                         
                         <?php if (!empty($agenda['latitude']) && !empty($agenda['longitude'])): ?>
                             <a href="https://www.google.com/maps/search/?api=1&query=<?= $agenda['latitude'] ?>,<?= $agenda['longitude'] ?>" 
-                               target="_blank" class="btn btn-outline-info ms-2">
-                                <i class="bi bi-map me-1"></i>
-                                Lihat di Maps
+                               target="_blank" class="btn btn-danger rounded-pill px-4 fw-semibold">
+                                <i class="bi bi-geo-alt-fill me-1"></i>
+                                Buka di Google Maps
                             </a>
                         <?php endif; ?>
                     </div>
