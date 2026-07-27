@@ -39,55 +39,76 @@
 </head>
 <body class="d-flex flex-column h-100">
 
-    <!-- Header (diseragamkan dengan public) -->
+    <!-- Header Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
-        <div class="container">
-            <!-- Hamburger Sidebar Toggle (mobile only) -->
-            <button class="btn-sidebar-toggle me-2" id="sidebarToggleBtn" type="button" aria-label="Toggle Sidebar">
-                <i class="bi bi-list"></i>
-            </button>
+        <div class="container-fluid px-2 px-sm-3 d-flex align-items-center justify-content-between">
+            
+            <!-- Left: Sidebar Toggle + Brand Logo & Title -->
+            <div class="d-flex align-items-center me-2">
+                <button class="btn-sidebar-toggle me-2" id="sidebarToggleBtn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
 
-            <a class="navbar-brand d-flex align-items-center" href="<?= site_url('dashboard') ?>">
-                <img src="<?= base_url('logo.png') ?>" alt="PDPM Karanganyar" class="navbar-logo me-2">
-                <span>PDPM KARANGANYAR</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item d-none d-lg-block me-3">
-                        <a class="nav-link <?= current_url() == site_url('dashboard') ? 'active' : '' ?>" href="<?= site_url('dashboard') ?>">Beranda</a>
-                    </li>
-                    <li class="nav-item d-none d-lg-block me-3">
-                        <a class="nav-link <?= strpos(current_url(), 'admin-berita') !== false ? 'active' : '' ?>" href="<?= site_url('admin-berita') ?>">Berita</a>
-                    </li>
-                    <li class="nav-item d-none d-lg-block me-3">
-                        <a class="nav-link <?= strpos(current_url(), 'admin-agenda') !== false ? 'active' : '' ?>" href="<?= site_url('admin-agenda') ?>">Agenda</a>
-                    </li>
-                    <?php if(session()->get('id_role') == 1): // Hanya Super Admin ?>
-                    <li class="nav-item d-none d-lg-block me-3">
-                        <a class="nav-link <?= strpos(current_url(), 'admin-voting') !== false ? 'active' : '' ?>" href="<?= site_url('admin-voting') ?>">Voting</a>
-                    </li>
-                    <?php endif; ?>
-                    <?php if(session()->get('id_role') == 3): // Anggota ?>
-                    <li class="nav-item d-none d-lg-block me-3">
-                        <a class="nav-link <?= strpos(current_url(), 'voting') !== false ? 'active' : '' ?>" href="<?= site_url('voting') ?>">Voting</a>
-                    </li>
-                    <?php endif; ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill me-1"></i>
-                            <?= session()->get('nama_lengkap') ?>
+                <a class="navbar-brand d-flex align-items-center m-0 p-0" href="<?= site_url('dashboard') ?>">
+                    <img src="<?= base_url('logo.png') ?>" alt="PDPM Karanganyar" class="navbar-logo me-2">
+                    <span class="d-none d-sm-inline">PDPM KARANGANYAR</span>
+                    <span class="d-inline d-sm-none fs-6 fw-bold">PDPM</span>
+                </a>
+            </div>
+
+            <!-- Middle: Desktop Navigation Links (≥992px) -->
+            <div class="d-none d-lg-flex align-items-center mx-auto">
+                <ul class="navbar-nav flex-row gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link px-3 <?= current_url() == site_url('dashboard') ? 'active' : '' ?>" href="<?= site_url('dashboard') ?>">
+                            <i class="bi bi-speedometer2 me-1"></i>Beranda
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="<?= site_url('profil-saya') ?>">Profil Saya</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="<?= site_url('logout') ?>">Logout</a></li>
-                        </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 <?= strpos(current_url(), 'admin-berita') !== false ? 'active' : '' ?>" href="<?= site_url('admin-berita') ?>">
+                            <i class="bi bi-newspaper me-1"></i>Berita
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 <?= strpos(current_url(), 'admin-agenda') !== false ? 'active' : '' ?>" href="<?= site_url('admin-agenda') ?>">
+                            <i class="bi bi-calendar-event me-1"></i>Agenda
+                        </a>
+                    </li>
+                    <?php if(session()->get('id_role') == 1): ?>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 <?= strpos(current_url(), 'admin-voting') !== false ? 'active' : '' ?>" href="<?= site_url('admin-voting') ?>">
+                            <i class="bi bi-ui-checks me-1"></i>Voting
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                    <?php if(session()->get('id_role') == 3): ?>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 <?= strpos(current_url(), 'voting') !== false ? 'active' : '' ?>" href="<?= site_url('voting') ?>">
+                            <i class="bi bi-ui-checks me-1"></i>Voting
+                        </a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
             </div>
+
+            <!-- Right: User Profile Dropdown Pill -->
+            <div class="dropdown ms-auto">
+                <a class="nav-link dropdown-toggle text-white d-flex align-items-center py-1 px-2 px-sm-3 rounded-pill bg-white bg-opacity-10 border border-warning border-opacity-25" 
+                   href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="navbar-user-avatar me-1 me-sm-2"><?= strtoupper(substr(session()->get('nama_lengkap') ?? 'U', 0, 2)) ?></span>
+                    <span class="d-none d-md-inline small fw-semibold me-1 me-sm-2 text-truncate" style="max-width: 140px;"><?= esc(session()->get('nama_lengkap')) ?></span>
+                    <i class="bi bi-chevron-down small text-warning"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="navbarDropdown">
+                    <li class="dropdown-header d-md-none text-wrap text-dark fw-bold border-bottom pb-2 mb-1">
+                        <i class="bi bi-person-circle me-1 text-danger"></i><?= esc(session()->get('nama_lengkap')) ?>
+                    </li>
+                    <li><a class="dropdown-item" href="<?= site_url('profil-saya') ?>"><i class="bi bi-person-fill me-2 text-primary"></i>Profil Saya</a></li>
+                    <li><hr class="dropdown-divider my-1"></li>
+                    <li><a class="dropdown-item text-danger" href="<?= site_url('logout') ?>"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                </ul>
+            </div>
+
         </div>
     </nav>
 
